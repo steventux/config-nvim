@@ -2,6 +2,7 @@
 
 This is my personal Neovim config. It is based on the amazing [NvChad](nvchad/NvChad) starter.
 The plugins and settings are intended for Python development.
+Includes Copilot and Neovim and a Python LSP config.
 
 ## Installation
 
