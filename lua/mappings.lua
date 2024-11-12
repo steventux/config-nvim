@@ -11,11 +11,16 @@ map('i', '<C-a>', function ()
   vim.fn.feedkeys(vim.fn['copilot#Accept'](), '')
 end, { desc = 'Copilot Accept', noremap = true, silent = true })
 
-map("n", "<Leader>ta", ":!pytest -vv<CR>", { desc = "Run all tests" })
-map("n", "<Leader>tt", ":!pytest -vv %<CR>", { desc = "Run tests in file" })
-
-map("n", "<C-s>", ":lua require('neotest').summary.toggle()<CR>", { desc = "Toggle Neotest summary pane" })
-map("n", "<C-t>", ":lua require('neotest').run.run(vim.fn.getcwd())<CR>", { desc = "Run Neotest in current directory" })
-map("n", "<C-f>", ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>", { desc = "Run Neotest on current file" })
-
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+
+map("n", "<leader>tt", function() require("neotest").run.run(vim.fn.expand("%")) end, { desc = "Run File (Neotest)" })
+map("n", "<leader>ta", function() require("neotest").run.run(vim.uv.cwd()) end, { desc = "Run All Test Files (Neotest)" })
+map("n", "<leader>tr", function() require("neotest").run.run() end, { desc = "Run Nearest (Neotest)" })
+map("n", "<leader>tl", function() require("neotest").run.run_last() end, { desc = "Run Last (Neotest)" })
+map("n", "<leader>ts", function() require("neotest").summary.toggle() end, { desc = "Toggle Summary (Neotest)" })
+map("n", "<leader>to", function() require("neotest").output.open({ enter = true, auto_close = true }) end, { desc = "Show Output (Neotest)" })
+map("n", "<leader>tO", function() require("neotest").output_panel.toggle() end, { desc = "Toggle Output Panel (Neotest)" })
+map("n", "<leader>tS", function() require("neotest").run.stop() end, { desc = "Stop (Neotest)" })
+map("n", "<leader>tw", function() require("neotest").watch.toggle(vim.fn.expand("%")) end, { desc = "Toggle Watch (Neotest)" })
+
