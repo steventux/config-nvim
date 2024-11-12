@@ -4,6 +4,9 @@ This is my personal Neovim config. It is based on the amazing [NvChad](nvchad/Nv
 The plugins and settings are intended for Python development.
 Includes Copilot and Neotest plugins and a Python LSP server config.
 
+![image](https://github.com/user-attachments/assets/2bf8de51-4007-4fa4-bdd9-db095ab34144)
+
+
 ## Installation
 
 1. Clone this repo to your Neovim config directory (usually `~/.config/nvim`).
