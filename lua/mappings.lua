@@ -3,6 +3,10 @@ require "nvchad.mappings"
 -- add yours here
 
 local map = vim.keymap.set
+local del = vim.keymap.del
+
+
+del("i", "<C-h>") -- Disable the NvChad navigation mapping which conflicts with insert mode backspace key.
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
@@ -23,4 +27,3 @@ map("n", "<leader>to", function() require("neotest").output.open({ enter = true,
 map("n", "<leader>tO", function() require("neotest").output_panel.toggle() end, { desc = "Toggle Output Panel (Neotest)" })
 map("n", "<leader>tS", function() require("neotest").run.stop() end, { desc = "Stop (Neotest)" })
 map("n", "<leader>tw", function() require("neotest").watch.toggle(vim.fn.expand("%")) end, { desc = "Toggle Watch (Neotest)" })
-
